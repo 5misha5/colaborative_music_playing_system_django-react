@@ -1,11 +1,6 @@
 import React, {Component} from "react";
 
-export default class HomePage extends Component {
-    constructor(props) {
-        super(props)
-    }
+function HomePage() {
 
-    render() {
-        return <p>This is Home Page</p>
-    }
+    return <p>This is Home Page</p>
 }
