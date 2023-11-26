@@ -18,7 +18,6 @@ export default class App extends Component {
                 <Route path='' element={<HomePage/>}/>
                 <Route path='/join' element={<RoomJoinPage/>}/>
                 <Route path='/create' element={<CreateRoomPage/>}/>
-
             </Routes>
 
         </Router>)
