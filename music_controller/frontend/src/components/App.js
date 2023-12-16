@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {render} from "react-dom"
 import { createRoot } from 'react-dom/client';
-import {BrowserRouter as Router, Routes, Route, Redirect} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import HomePage from "./HomePage";
 import RoomJoinPage from "./RoomJoinPage";
 import CreateRoomPage from "./CreateRoomPage";
@@ -14,16 +14,23 @@ export default class App extends Component {
     }
 
     render() {
-        return (<Router>
+        return (
+        <div className={"center"}>
 
-            <Routes>
-                <Route path='' element={<HomePage/>}/>
-                <Route path='/join' element={<RoomJoinPage/>}/>
-                <Route path='/create_room' element={<CreateRoomPage/>}/>
-                <Route path='/room/:roomCode' element={<Room/>}/>
-            </Routes>
+            <Router>
 
-        </Router>)
+                <Routes>
+                    <Route path='' element={<HomePage/>}/>
+                    <Route path='/join' element={<RoomJoinPage/>}/>
+                    <Route path='/create_room' element={<CreateRoomPage/>}/>
+                    <Route path='/room/:roomCode' element={<Room/>}/>
+                </Routes>
+
+            </Router>
+
+        </div>
+
+    )
     }
 }
 
