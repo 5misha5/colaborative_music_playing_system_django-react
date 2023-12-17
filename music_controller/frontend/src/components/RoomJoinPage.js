@@ -1,11 +1,13 @@
+/* jshint esversion: 8 */
 import React, {useState} from "react";
 import { TextField, Button, Grid, Typography } from "@material-ui/core";
-import {Link, useNavigate} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom";
 
 function  RoomJoinPage(){
+    "use strict";
 
-    const [roomCode, setRoomCode] = useState("")
-    const [error, setError] = useState("")
+    const [roomCode, setRoomCode] = useState("");
+    const [error, setError] = useState("");
 
     const navigate = useNavigate();
 
@@ -20,13 +22,13 @@ function  RoomJoinPage(){
 
         fetch("/api/join_room", requestOptions).then((response) => {
             if (response.ok){
-                navigate('/room/' + roomCode)
+                navigate('/room/' + roomCode);
             }else{
-                setError("Room not found")
+                setError("Room not found");
             }
         }).catch((error) => {
-            console.log(error)
-        })
+            console.log(error);
+        });
     }
 
     // function _handleTextFieldChange(e) {
